@@ -7,7 +7,7 @@ uv sync --extra torch --extra metrics --prerelease=allow
 ## Token stats
 
 ```sh
-uv run --prerelease=allow python token_stats.py --model meta-llama/Meta-Llama-3-8B-Instruct --dataset bdsaglam/web_nlg-erx-concat-chat --split train
+python token_stats.py --model meta-llama/Meta-Llama-3-8B-Instruct --dataset bdsaglam/web_nlg-erx-concat-chat --split train
 ```
 
 ## SFT
@@ -44,4 +44,21 @@ huggingface-cli upload bdsaglam/erx-llama-3-8b saves/erx-llama-3-8b/sft
 ```sh
 export CUDA_VISIBLE_DEVICES=3
 llamafactory-cli export examples/merge_lora/erx-llama-3-8b.yaml
+```
+
+
+## SFT Medium
+
+```sh
+export CUDA_VISIBLE_DEVICES=3
+uv run --prerelease=allow llamafactory-cli train examples/train_lora/erx-llama-3-8b-medium.yaml
+huggingface-cli upload bdsaglam/erx-llama-3-8b-medium saves/erx-llama-3-8b-medium/sft
+```
+
+## SFT High
+
+```sh
+export CUDA_VISIBLE_DEVICES=3
+uv run --prerelease=allow llamafactory-cli train examples/train_lora/erx-llama-3-8b-high.yaml
+huggingface-cli upload bdsaglam/erx-llama-3-8b-high saves/erx-llama-3-8b-high/sft
 ```
