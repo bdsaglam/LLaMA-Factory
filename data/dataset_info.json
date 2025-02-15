@@ -660,5 +660,19 @@
       "prompt": "content"
     },
     "folder": "python"
+  },
+  "web_nlg-erx-concat-chat": {
+    "hf_hub_url": "bdsaglam/web_nlg-erx-concat-chat",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant",
+      "system_tag": "system"
+    }
   }
 }
