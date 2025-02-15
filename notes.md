@@ -35,6 +35,13 @@ llamafactory-cli api examples/inference/erx-llama-3-8b.yaml
 ## Publish
 
 ```sh
+huggingface-cli upload bdsaglam/erx-llama-3-8b saves/erx-llama-3-8b/sft
+```
+
+> [!WARNING]
+> Merging with llama-factory didn't work.
+
+```sh
 export CUDA_VISIBLE_DEVICES=3
 llamafactory-cli export examples/merge_lora/erx-llama-3-8b.yaml
 ```

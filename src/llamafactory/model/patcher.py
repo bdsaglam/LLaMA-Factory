@@ -127,7 +127,8 @@ def patch_config(
         setattr(config, "init_audio", True)
         setattr(config, "init_tts", False)
 
-    if "LlavaLlamaForCausalLM" in getattr(config, "architectures", []):
+    architectures = getattr(config, "architectures", []) or []
+    if "LlavaLlamaForCausalLM" in architectures:
         raise ValueError("Please download llava models with hf-compatible format: https://huggingface.co/llava-hf")
 
     if getattr(config, "model_type", None) == "internlm3" and not is_transformers_version_greater_than("4.47.1"):
