@@ -14,14 +14,14 @@ python token_stats.py --model meta-llama/Meta-Llama-3-8B-Instruct --dataset bdsa
 
 ```sh
 export CUDA_VISIBLE_DEVICES=3
-uv run --prerelease=allow llamafactory-cli train examples/train_lora/erx-llama-3-8b.yaml
+uv run --prerelease=allow llamafactory-cli train examples/train_lora/erx-llama-3-8b-low.yaml
 ```
 
 ## Chat
 
 ```sh
 export CUDA_VISIBLE_DEVICES=3
-llamafactory-cli chat examples/inference/erx-llama-3-8b.yaml
+llamafactory-cli chat examples/inference/erx-llama-3-8b-low.yaml
 ```
 
 ## Inference
@@ -29,13 +29,13 @@ llamafactory-cli chat examples/inference/erx-llama-3-8b.yaml
 ```sh
 export CUDA_VISIBLE_DEVICES=3
 export API_PORT=8008
-llamafactory-cli api examples/inference/erx-llama-3-8b.yaml
+llamafactory-cli api examples/inference/erx-llama-3-8b-low.yaml
 ```
 
 ## Publish
 
 ```sh
-huggingface-cli upload bdsaglam/erx-llama-3-8b saves/erx-llama-3-8b/sft
+huggingface-cli upload bdsaglam/erx-llama-3-8b-low saves/erx-llama-3-8b-low/sft
 ```
 
 > [!WARNING]
@@ -43,7 +43,7 @@ huggingface-cli upload bdsaglam/erx-llama-3-8b saves/erx-llama-3-8b/sft
 
 ```sh
 export CUDA_VISIBLE_DEVICES=3
-llamafactory-cli export examples/merge_lora/erx-llama-3-8b.yaml
+llamafactory-cli export examples/merge_lora/erx-llama-3-8b-low.yaml
 ```
 
 
